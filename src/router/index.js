@@ -20,6 +20,7 @@ router.beforeEach((to, from, next) => {
     document.title = to.meta.title + ' - ' + Config.title
   }
   NProgress.start()
+  // 判断cookie 中是否有 token
   if (getToken()) {
     // 已登录且要跳转的页面是登录页
     if (to.path === '/login') {
@@ -27,6 +28,7 @@ router.beforeEach((to, from, next) => {
       NProgress.done()
     } else {
       if (store.getters.roles.length === 0) { // 判断当前用户是否已拉取完user_info信息
+        console.log('获取路由')
         store.dispatch('GetInfo').then(() => { // 拉取user_info
           // 动态路由，拉取菜单
           loadMenus(next, to)
