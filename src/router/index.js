@@ -15,7 +15,6 @@ NProgress.configure({ showSpinner: false })// NProgress Configuration
 const whiteList = ['/login']// no redirect whitelist
 
 router.beforeEach((to, from, next) => {
-  console.log('我进行路由跳转了')
   if (to.meta.title) {
     document.title = to.meta.title + ' - ' + Config.title
   }
@@ -28,7 +27,6 @@ router.beforeEach((to, from, next) => {
       NProgress.done()
     } else {
       if (store.getters.roles.length === 0) { // 判断当前用户是否已拉取完user_info信息
-        console.log('获取路由')
         store.dispatch('GetInfo').then(() => { // 拉取user_info
           // 动态路由，拉取菜单
           loadMenus(next, to)
@@ -64,7 +62,6 @@ export const loadMenus = (next, to) => {
     const sidebarRoutes = filterAsyncRouter(sdata)
     const rewriteRoutes = filterAsyncRouter(rdata, false, true)
     rewriteRoutes.push({ path: '*', redirect: '/404', hidden: true })
-
     store.dispatch('GenerateRoutes', rewriteRoutes).then(() => { // 存储路由
       router.addRoutes(rewriteRoutes) // 动态添加可访问路由表
       next({ ...to, replace: true })

@@ -19,7 +19,6 @@ const user = {
     SET_USER: (state, user) => {
       state.user = user
     },
-    // 把角色信息存储到 vuex 中
     SET_ROLES: (state, roles) => {
       state.roles = roles
     },
@@ -33,7 +32,7 @@ const user = {
     Login({ commit }, userInfo) {
       return new Promise((resolve, reject) => {
         login(userInfo.username, userInfo.password, userInfo.code, userInfo.uuid).then(res => {
-          setUserInfo(res.user, commit)
+          setUserInfo(res, commit)
           // 第一次加载菜单时用到， 具体见 src 目录下的 permission.js
           commit('SET_LOAD_MENUS', true)
           resolve()

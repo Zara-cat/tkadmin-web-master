@@ -9,15 +9,20 @@ $yellow:#FEC171;
 $panGreen: #30B08F;
 
 // sidebar
-$menuText:#bfcbd9;
+// $menuText:#bfcbd9;主题：01
+$menuText:#FFFFFF;
 $menuActiveText:#409EFF;
 $subMenuActiveText:#f4f4f5; // https://github.com/ElemeFE/element/issues/12951
 
-$menuBg:#304156;
-$menuHover:#263445;
+//$menuBg:#304156; 主题：01
+//$menuHover:#263445; 主题：01
+$menuBg:#090723;
+$menuHover:#001528;
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
+//$subMenuBg:#1f2d3d; 主题：01
+//$subMenuHover:#001528; 主题：01
+$subMenuBg:#0F0F33;
+$subMenuHover:#010911;
 
 $sideBarWidth: 205px;
 

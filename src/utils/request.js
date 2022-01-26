@@ -60,7 +60,7 @@ service.interceptors.response.use(
       setToken(response.headers['x-authorization-with'])
       // 把token 存储在 vuex 中，这里其实方式不太对，以后有好的方式替换 token 存储时机
       store.commit('SET_TOKEN', response.headers['x-authorization-with'])
-      console.log('token: ', store.getters.token)
+      // console.log('token: ', store.getters.token)
     }
     return response.data.data
   },

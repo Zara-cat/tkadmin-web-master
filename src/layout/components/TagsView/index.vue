@@ -219,9 +219,12 @@ export default {
         margin-right: 15px;
       }
       &.active {
-        background-color: #42b983;
+        // background-color: #42b983;
+        // color: #fff;
+        //border-color: #42b983;
+        background-color: #0F0F33;
         color: #fff;
-        border-color: #42b983;
+        border-color: #0F0F33;
         &::before {
           content: '';
           background: #fff;
@@ -237,7 +240,7 @@ export default {
   }
   .contextmenu {
     margin: 0;
-    background: #fff;
+    background: rgb(46, 45, 45);
     z-index: 3000;
     position: absolute;
     list-style-type: none;
@@ -245,14 +248,14 @@ export default {
     border-radius: 4px;
     font-size: 12px;
     font-weight: 400;
-    color: #333;
+    color: #fff;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, .3);
     li {
       margin: 0;
       padding: 7px 16px;
       cursor: pointer;
       &:hover {
-        background: #eee;
+        background:rgb(14, 13, 13);
       }
     }
   }

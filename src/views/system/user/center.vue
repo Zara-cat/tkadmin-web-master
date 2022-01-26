@@ -9,7 +9,8 @@
           <div>
             <div style="text-align: center">
               <div class="el-upload">
-                <img :src="user.avatarName ? baseApi + '/avatar/' + user.avatarName : Avatar" title="点击上传头像" class="avatar" @click="toggleShow">
+                <!-- <img :src="user.avatarName ? baseApi + '/avatar/' + user.avatarName : Avatar" title="点击上传头像" class="avatar" @click="toggleShow"> -->
+                <img :src="user.avatarName ? Avatar : Avatar" title="点击上传头像" class="avatar" @click="toggleShow">
                 <myUpload
                   v-model="show"
                   :headers="headers"
@@ -114,7 +115,7 @@ import store from '@/store'
 import { isvalidPhone } from '@/utils/validate'
 import crud from '@/mixins/crud'
 import { editUser } from '@/api/system/user'
-import Avatar from '@/assets/images/avatar.png'
+import Avatar from '@/assets/images/avatar_name.jpg'
 export default {
   name: 'Center',
   components: { updatePass, updateEmail, myUpload },
